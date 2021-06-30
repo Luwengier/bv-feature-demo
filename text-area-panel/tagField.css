@@ -1,0 +1,83 @@
+/* Normalize */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+
+/* 看診紀錄輸入介面樣式 */
+#tag-field {
+  width: 100%;
+  max-width: 1000px;
+  margin: 1rem auto;
+}
+
+.tag-board {
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1em;
+  border: 1px solid #aaaaaa;
+}
+
+.tag-pool {
+  font-size: 0;
+  width: 100%;
+}
+
+.tag-pool > div {
+  display: inline-block;
+  min-height: 12rem;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-left: none;
+  vertical-align: top;
+}
+
+.tag-pool > div:first-child {
+  border-left: 1px solid #cccccc;
+}
+
+.tag-pool span.tag-button {
+  font-size: 1rem;
+  display: inline-block;
+  color: #333333;
+  background-color: #fdc57066;
+  padding: 0.2em 1em;
+  margin: 0.2em 0.2em;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+.tag-pool .describe-pool span.tag-button {
+  background-color: #f7d7a666;
+}
+
+.tag-pool .symptom-pool span.tag-button {
+  background-color: #ffd75266;
+}
+
+.tag-pool .verb-pool span.tag-button {
+  background-color: #f7d7a666;
+}
+
+.tag-pool .control-pool span.control-button {
+  font-size: 1rem;
+  display: inline-block;
+  background-color: #f7c0a6ab;
+  padding: 0.2em 3.2em;
+  margin: 0.2em 0.2em;
+  margin-top: 1.2em;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .tag-pool > div {
+    min-height: 18rem;
+    width: 33.33333%;
+  }
+}
+
