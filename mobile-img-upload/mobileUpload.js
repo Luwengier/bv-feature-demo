@@ -75,7 +75,7 @@ function showSubmit() {
   submitButton.addEventListener('click', submitImage);
   document.querySelector('.submit-field').append(submitButton);
   const cancelButton = document.createElement('button');
-  cancelButton.classList.add('submit-btn');
+  cancelButton.classList.add('cancel-btn');
   cancelButton.innerText = '取消';
   cancelButton.addEventListener('click', clearImage);
   document.querySelector('.submit-field').append(cancelButton);

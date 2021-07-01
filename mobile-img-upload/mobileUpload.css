@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 
-#mobile-upload {
+#mobile-upload .container-fuild {
   width: 95%;
   max-width: 570px;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  /* padding-left: 15px;
+  padding-right: 15px; */
   overflow: auto;
 }
 
@@ -17,6 +17,7 @@
   color: #333333;
   text-align: center;
   letter-spacing: 0.3em;
+  padding: 0.5em 0;
 }
 
 #mobile-upload input,
@@ -30,6 +31,7 @@
   letter-spacing: 0.5em;
   color: #333333;
   border: none;
+  border-radius: 0.5em;
 }
 
 #mobile-upload .upload-field {
@@ -47,11 +49,10 @@
 }
 
 #mobile-upload .upload-field button {
-  background-color: #fcda92;
+  background-color: #f5cd82;
   pointer-events: none;
   position: absolute;
   cursor: pointer;
-  border-radius: 0.5em;
   left: 0;
   top: 0;
 }
@@ -67,7 +68,13 @@
   margin: 2em auto;
 }
 
-#mobile-upload .submit-field button {
+#mobile-upload .submit-field button.submit-btn {
+  background-color: #f5cd82;
+  margin: 0.3em auto;
+}
+
+#mobile-upload .submit-field button.cancel-btn {
+  background-color: #dddddd;
   margin: 0.3em auto;
 }
 
