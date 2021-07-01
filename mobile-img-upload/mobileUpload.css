@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#mobile-upload {
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: auto;
+}
+
+#mobile-upload h2 {
+  color: #333333;
+  text-align: center;
+  letter-spacing: 0.3em;
+}
+
+#mobile-upload input,
+#mobile-upload button,
+#mobile-upload .upload-field {
+  width: 320px;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.5em;
+}
+
+#mobile-upload .upload-field {
+  margin: 20px auto;
+  position: relative;
+}
+
+#mobile-upload .upload-field.uploaded {
+  display: none;
+}
+
+#mobile-upload button.upload-btn {
+  position: absolute;
+  cursor: pointer;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+}
+
+#mobile-upload a {
+  pointer-events: none;
+}
+
+#mobile-upload .img {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#mobile-upload .preview-field canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#mobile-upload .submit-field {
+  text-align: center;
+  margin: 2em auto;
+}
+
+#mobile-upload .submit-field button {
+  margin: 0.3em 0;
+}
+
