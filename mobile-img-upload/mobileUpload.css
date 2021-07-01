@@ -22,11 +22,14 @@
 #mobile-upload input,
 #mobile-upload button,
 #mobile-upload .upload-field {
+  display: block;
   width: 16rem;
   height: 3rem;
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.5em;
+  color: #333333;
+  border: none;
 }
 
 #mobile-upload .upload-field {
@@ -44,20 +47,13 @@
 }
 
 #mobile-upload .upload-field button {
+  background-color: #fcda92;
+  pointer-events: none;
   position: absolute;
   cursor: pointer;
-  pointer-events: none;
+  border-radius: 0.5em;
   left: 0;
   top: 0;
-}
-
-#mobile-upload a {
-  pointer-events: none;
-}
-
-#mobile-upload .img {
-  border: 1px solid #ccc;
-  padding: 10px;
 }
 
 #mobile-upload .preview-field canvas {
@@ -72,6 +68,6 @@
 }
 
 #mobile-upload .submit-field button {
-  margin: 0.3em 0;
+  margin: 0.3em auto;
 }
 
