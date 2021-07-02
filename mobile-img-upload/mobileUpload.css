@@ -7,8 +7,8 @@
 #mobile-upload {
   overflow: auto;
   min-height: 100vh;
-  background: url(./images/Sprinkle.svg) no-repeat center;
-  background-size: cover;
+  background: url(./images/Sprinkle.svg) center;
+  background-size: 660%;
 }
 
 #mobile-upload .container-fluid {
@@ -16,6 +16,10 @@
   max-width: 540px;
   margin: 20vh auto 0;
   overflow: auto;
+}
+
+#mobile-upload.uploaded .container-fluid {
+  margin: 0 auto;
 }
 
 #mobile-upload h2 {
@@ -108,5 +112,12 @@
 #mobile-upload .submit-field button.cancel-btn {
   background-color: #dddddd;
   margin: 0.3em auto;
+}
+
+
+@media (min-width: 768px) {
+  #mobile-upload {
+    background-size: 200%;
+  }
 }
 
