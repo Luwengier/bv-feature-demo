@@ -1,17 +1,22 @@
 let imgArray = [];
+const amountLimit = 10;
+const imageWidth = 540;
+
 const imageInput = document.querySelector('#mobile-upload');
+const medicalRecordId = document.querySelector('.mr-id')
 const inputField = document.querySelector('.upload-field');
 const previewField = document.querySelector('.preview-field');
 const submitField = document.querySelector('.submit-field');
 
 imageInput.addEventListener('change', onImageChange);
+window.addEventListener('load', showMedicalRecordId());
 
 
 function onImageChange() {
   let files = document.querySelector('#image-input').files;
   if (files && files.length != 0) {
     const fileArray = [...files];
-    if(fileArray.length > 10) return alert('限制十張圖片以下');
+    if(fileArray.length > amountLimit) return alert(`限制${amountLimit}張圖片以下`);
     imageInput.classList.add('uploaded', 'uploading');
     fileArray.forEach(file => readImage(file, fileArray.length));
   }
@@ -30,7 +35,7 @@ function readImage(file, fileLength) {
 // 壓縮檔案並預覽 後儲存於陣列
 function compressAndPreview(dataURL, fileSize, fileLength) {
   const previewField = document.querySelector('.preview-field');
-  const maxW = 540;
+  const maxW = imageWidth;
   const img = new Image();
   img.addEventListener("load", () => {
     const cvs = document.createElement('canvas');
@@ -96,6 +101,15 @@ function clearImage() {
   inputField.reset();
   imgArray.length = 0;
   console.log('cleared');
+};
+
+function showMedicalRecordId() {
+  medicalRecordId.innerText = getQueryString('MRId') || '無單號';
+};
+
+function getQueryString(targetName) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(targetName);
 };
 
 

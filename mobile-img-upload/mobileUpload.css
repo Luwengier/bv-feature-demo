@@ -27,7 +27,16 @@
   color: #fbfbfb;
   text-align: center;
   letter-spacing: 0.3em;
-  padding: 1em 0;
+  padding-top: 1em;
+  text-shadow: 2px 3px 0px #222222;
+}
+
+#mobile-upload h5 {
+  font-size: 0.9rem;
+  color: #9e9e9e;
+  text-align: center;
+  padding-bottom: 2em;
+  letter-spacing: 0.3em;
   text-shadow: 2px 3px 0px #222222;
 }
 
@@ -81,6 +90,11 @@
 
 #mobile-upload .upload-field small {
   color: #505050;
+  letter-spacing: 0.4em;
+}
+
+#mobile-upload .upload-field small span {
+  color: #8a7c72;
 }
 
 #mobile-upload .upload-field input {
