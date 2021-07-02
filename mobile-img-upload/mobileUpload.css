@@ -5,23 +5,26 @@
 }
 
 #mobile-upload {
+  overflow: auto;
   min-height: 100vh;
-  background: url(./images/Cornered-Stairs.svg) no-repeat center;
+  background: url(./images/Sprinkle.svg) no-repeat center;
   background-size: cover;
 }
 
 #mobile-upload .container-fluid {
   width: 95%;
   max-width: 540px;
-  margin: 0 auto;
+  margin: 20vh auto 0;
   overflow: auto;
 }
 
 #mobile-upload h2 {
-  color: #666666;
+  font-size: 2rem;
+  color: #fbfbfb;
   text-align: center;
   letter-spacing: 0.3em;
   padding: 1em 0;
+  text-shadow: 2px 3px 0px #222222;
 }
 
 #mobile-upload input,
@@ -50,11 +53,12 @@
 
 #mobile-upload .images-icon {
   text-align: center;
-  margin-top: -2em;
+  margin-top: -1em;
+  margin-bottom: 1em;
 }
 
 #mobile-upload .images-icon img {
-  width: 70%;
+  width: 82%;
 }
 
 #mobile-upload.uploaded .images-icon {

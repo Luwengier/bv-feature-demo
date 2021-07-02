@@ -11,8 +11,8 @@ function onImageChange() {
   let files = document.querySelector('#image-input').files;
   if (files && files.length != 0) {
     const fileArray = [...files];
+    if(fileArray.length > 3) return alert('限制三張圖片以下');
     imageInput.classList.add('uploaded', 'uploading');
-    if(fileArray.length >= 3) return alert('限制兩張圖片以下');
     fileArray.forEach(file => readImage(file, fileArray.length));
   }
 };
