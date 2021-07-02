@@ -4,20 +4,24 @@
   box-sizing: border-box;
 }
 
-#mobile-upload .container-fuild {
+#mobile-upload {
+  min-height: 100vh;
+  background: url(./images/Cornered-Stairs.svg) no-repeat center;
+  background-size: cover;
+}
+
+#mobile-upload .container-fluid {
   width: 95%;
-  max-width: 570px;
+  max-width: 540px;
   margin: 0 auto;
-  /* padding-left: 15px;
-  padding-right: 15px; */
   overflow: auto;
 }
 
 #mobile-upload h2 {
-  color: #333333;
+  color: #666666;
   text-align: center;
   letter-spacing: 0.3em;
-  padding: 0.5em 0;
+  padding: 1em 0;
 }
 
 #mobile-upload input,
@@ -32,19 +36,43 @@
   color: #333333;
   border: none;
   border-radius: 0.5em;
+  cursor: pointer;
 }
 
+#mobile-upload .loading {
+  display: none;
+  text-align: center;
+}
+
+#mobile-upload.uploading .loading {
+  display: block;
+}
+
+#mobile-upload .images-icon {
+  text-align: center;
+  margin-top: -2em;
+}
+
+#mobile-upload .images-icon img {
+  width: 70%;
+}
+
+#mobile-upload.uploaded .images-icon {
+  display: none;
+}
+
+
 #mobile-upload .upload-field {
-  margin: 20px auto;
+  margin: 0 auto;
   position: relative;
 }
 
-#mobile-upload .upload-field.uploaded {
+#mobile-upload.uploaded .upload-field {
   display: none;
 }
 
 #mobile-upload .upload-field input {
-  padding: 0 5.5rem;
+  padding: 0.2em 5.5rem;
   color: #ffffff00;
 }
 

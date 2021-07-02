@@ -8,12 +8,11 @@ imageInput.addEventListener('change', onImageChange);
 
 
 function onImageChange() {
-  console.log('change');
   let files = document.querySelector('#image-input').files;
-  if (files) {
+  if (files && files.length != 0) {
     const fileArray = [...files];
+    imageInput.classList.add('uploaded', 'uploading');
     if(fileArray.length >= 3) return alert('限制兩張圖片以下');
-    inputField.classList.add('uploaded');
     fileArray.forEach(file => readImage(file, fileArray.length));
   }
 };
@@ -21,7 +20,7 @@ function onImageChange() {
 function readImage(file, fileLength) {
   const reader = new FileReader();
   reader.addEventListener("load", () => {
-    console.log('data:URL before', reader.result);
+    console.log('before', reader.result);
     const fileSize = Math.round(file.size / 1024 / 1024);
     compressAndPreview(reader.result, fileSize, fileLength);
   });
@@ -42,11 +41,14 @@ function compressAndPreview(dataURL, fileSize, fileLength) {
     cvs.width = img.width; cvs.height = img.height;
     ctx.clearRect(0, 0, cvs.width, cvs.height);
     ctx.drawImage(img, 0, 0, img.width, img.height);
-    const dataUrl = cvs.toDataURL('image/jpeg', getCompressRate(1, fileSize));
     previewField.appendChild(cvs);
+    const dataUrl = cvs.toDataURL('image/jpeg', getCompressRate(1, fileSize));
     imgArray.push(dataUrl);
-    console.log('data:URL after', dataUrl);
-    if (imgArray.length === fileLength) showSubmit();
+    console.log('after', dataUrl);
+    if (imgArray.length === fileLength) {
+      imageInput.classList.remove('uploading');
+      showSubmit();
+    };
   });
   img.src = dataURL;
 };
@@ -55,15 +57,15 @@ function compressAndPreview(dataURL, fileSize, fileLength) {
 function getCompressRate(allowMaxSize, fileSize) {
   let compressRate;
   if (fileSize / allowMaxSize > 4) {
-    compressRate = 0.5;
+    compressRate = 0.4;
   } else if (fileSize / allowMaxSize > 3) {
-    compressRate = 0.6;
+    compressRate = 0.5;
   } else if (fileSize / allowMaxSize > 2) {
-    compressRate = 0.7;
+    compressRate = 0.6;
   } else if (fileSize > allowMaxSize) {
-    compressRate = 0.8;
+    compressRate = 0.7;
   } else {
-    compressRate = 0.9;
+    compressRate = 0.8;
   }
   return compressRate;
 };
@@ -90,7 +92,7 @@ function submitImage() {
 function clearImage() {
   while(previewField.firstElementChild) {previewField.removeChild(previewField.firstElementChild)};
   while(submitField.firstElementChild) {submitField.removeChild(submitField.firstElementChild)};
-  inputField.classList.remove('uploaded');
+  imageInput.classList.remove('uploaded');
   inputField.reset();
   imgArray.length = 0;
   console.log('cleared');
