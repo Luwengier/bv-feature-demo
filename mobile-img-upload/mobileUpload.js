@@ -90,7 +90,7 @@ function showSubmit() {
 
 function submitImage() {
   console.log('Submit Image!');
-  clearImage();
+  document.location.href = './complete.html';
 };
 
 // 清除圖片預覽 提交按鈕 圖檔輸入欄資料 圖檔陣列資料

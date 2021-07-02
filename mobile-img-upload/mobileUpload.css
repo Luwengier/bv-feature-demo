@@ -132,10 +132,39 @@
   margin: 0.8em auto;
 }
 
-
 @media (min-width: 768px) {
   #mobile-upload {
     background-size: 200%;
   }
 }
 
+
+
+#upload-complete {
+  overflow: auto;
+  min-height: 100vh;
+  background: url(./images/Sprinkle.svg) center;
+  background-size: 660%;
+}
+
+#upload-complete .container-fluid {
+  width: 95%;
+  max-width: 540px;
+  margin: 21vh auto 0;
+  text-align: center;
+  overflow: auto;
+}
+
+#upload-complete h1 {
+  font-size: 2.8rem;
+  color: #fbfbfb;
+  text-align: center;
+  letter-spacing: 0.3em;
+  padding-top: 1em;
+  text-shadow: 2px 3px 0px #222222;
+}
+
+#upload-complete img {
+  width: 50%;
+  margin: 2em auto;
+}
