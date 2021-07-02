@@ -62,7 +62,7 @@
 }
 
 #mobile-upload .images-icon img {
-  width: 82%;
+  width: 62%;
 }
 
 #mobile-upload.uploaded .images-icon {
@@ -71,12 +71,17 @@
 
 
 #mobile-upload .upload-field {
+  text-align: center;
   margin: 0 auto;
   position: relative;
 }
 
 #mobile-upload.uploaded .upload-field {
   display: none;
+}
+
+#mobile-upload .upload-field small {
+  color: #505050;
 }
 
 #mobile-upload .upload-field input {
